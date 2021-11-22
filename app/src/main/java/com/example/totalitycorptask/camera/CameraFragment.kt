@@ -22,10 +22,11 @@ import androidx.fragment.app.Fragment
 import androidx.localbroadcastmanager.content.LocalBroadcastManager
 import androidx.window.WindowManager
 import com.example.totalitycorptask.*
-import com.example.totalitycorptask.AppConstants.IMAGE_URL
 import com.example.totalitycorptask.R
 import com.example.totalitycorptask.databinding.CameraUiContainerBinding
 import com.example.totalitycorptask.databinding.FragmentCameraBinding
+import com.example.totalitycorptask.ui.ImageEditActivity
+import com.example.totalitycorptask.utils.AppConstants.IMAGE_URL
 import java.io.File
 import java.nio.ByteBuffer
 import java.text.SimpleDateFormat

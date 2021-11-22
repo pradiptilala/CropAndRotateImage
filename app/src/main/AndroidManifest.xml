@@ -3,11 +3,9 @@
     package="com.example.totalitycorptask">
 
     <uses-permission android:name="android.permission.CAMERA" />
-<!--    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />-->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.MANAGE_EXTERNAL_STORAGE" />
 
-    <!-- <uses-feature android:name="android.hardware.camera" android:required="false" /> -->
-    <!-- <uses-feature android:name="android.hardware.camera.front" android:required="false" /> -->
     <!-- Declare features -->
     <uses-feature android:name="android.hardware.camera" />
 
@@ -20,14 +18,15 @@
         android:theme="@style/Theme.TotalityCorpTask">
 
         <activity
-            android:name=".ImageEditActivity"
-            android:screenOrientation="portrait"
-            android:exported="false" />
+            android:name=".ui.ImageEditActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
 
         <activity
-            android:name=".HomeActivity"
-            android:screenOrientation="portrait"
-            android:exported="true">
+            android:name=".ui.HomeActivity"
+            android:exported="true"
+            android:launchMode="singleInstance"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -38,22 +37,12 @@
         <activity
             android:name=".camera.CustomCameraActivity"
             android:screenOrientation="portrait">
-
-            <!-- android:theme="@style/MaterialTheme.NoActionBar" -->
+            ø
             <!-- Declare notch support -->
             <meta-data
                 android:name="android.notch_support"
                 android:value="true" />
-        </activity> <!-- android:theme="@style/MaterialTheme.NoActionBar" -->
-        <provider
-            android:name="androidx.core.content.FileProvider"
-            android:authorities="${applicationId}.provider"
-            android:exported="false"
-            android:grantUriPermissions="true">
-            <meta-data
-                android:name="android.support.FILE_PROVIDER_PATHS"
-                android:resource="@xml/file_paths" />
-        </provider>
+        </activity>
     </application>
 
 </manifest>

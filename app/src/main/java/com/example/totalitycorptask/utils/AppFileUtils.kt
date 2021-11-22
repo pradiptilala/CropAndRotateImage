@@ -1,11 +1,9 @@
-package com.example.totalitycorptask
+package com.example.totalitycorptask.utils
 
 import android.content.Context
 import android.os.Environment
-import android.provider.ContactsContract
-import android.provider.MediaStore
+import com.example.totalitycorptask.R
 import java.io.File
-import java.nio.file.DirectoryIteratorException
 import java.text.SimpleDateFormat
 import java.util.*
 
@@ -21,7 +19,7 @@ class AppFileUtils {
     }
 
     /* Helper function used to create a timestamped file */
-   fun createNewFile(context: Context,format: String, extension: String) =
+    fun createNewFile(context: Context, format: String, extension: String) =
         File(
             getOutputDirectory(context), SimpleDateFormat(format, Locale.US)
                 .format(System.currentTimeMillis()) + extension

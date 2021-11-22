@@ -1,126 +1,64 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context=".HomeActivity">
-
-    <!--    <androidx.appcompat.widget.AppCompatImageView-->
-    <!--    <com.isseiaoki.simplecropview.CropImageView-->
-    <!--        android:id="@+id/ivPreviewImageEdit"-->
-    <!--        android:layout_width="match_parent"-->
-    <!--        android:layout_height="0dp"-->
-    <!--        android:layout_margin="16dp"-->
-    <!--        android:layout_weight="1"-->
-    <!--        android:src="@drawable/ic_launcher_foreground"-->
-    <!--        app:layout_constraintBottom_toTopOf="@+id/btnUndo"-->
-    <!--        app:layout_constraintLeft_toLeftOf="parent"-->
-    <!--        app:layout_constraintRight_toRightOf="parent"-->
-    <!--        app:layout_constraintTop_toTopOf="parent" />-->
-
-    <!-- Image Cropper fill the remaining available height -->
-    <!--    <com.theartofdev.edmodo.cropper.CropImageView-->
-    <!--        xmlns:custom="http://schemas.android.com/apk/res-auto"-->
-    <!--        android:id="@+id/ivPreviewImageEdit"-->
-    <!--        android:layout_width="match_parent"-->
-    <!--        app:layout_constraintBottom_toTopOf="@+id/btnUndo"-->
-    <!--        app:layout_constraintLeft_toLeftOf="parent"-->
-    <!--        app:layout_constraintRight_toRightOf="parent"-->
-    <!--        app:layout_constraintTop_toTopOf="parent"-->
-    <!--        android:layout_height="0dp"-->
-    <!--        custom:cropFlipVertically="false"-->
-    <!--        custom:cropFlipHorizontally="false"/>-->
+    android:layout_height="match_parent">
 
     <com.canhub.cropper.CropImageView
         android:id="@+id/ivPreviewImageEdit"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_weight="1"
+        android:layout_margin="@dimen/spacing_16dp"
         app:layout_constraintBottom_toTopOf="@+id/btnUndo"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_weight="1" />
 
-    <!--    android:layout_weight="1"-->
-    <!--    <com.isseiaoki.simplecropview.CropImageView-->
-    <!--        xmlns:custom="http://schemas.android.com/apk/res-auto"-->
-    <!--        app:layout_constraintBottom_toTopOf="@+id/btnUndo"-->
-    <!--        app:layout_constraintLeft_toLeftOf="parent"-->
-    <!--        app:layout_constraintRight_toRightOf="parent"-->
-    <!--        app:layout_constraintTop_toTopOf="parent"-->
-    <!--        android:paddingTop="16dp"-->
-    <!--        android:paddingBottom="16dp"-->
-    <!--        android:paddingLeft="16dp"-->
-    <!--        android:id="@+id/ivPreviewImageEdit"-->
-    <!--        android:paddingRight="16dp"-->
-    <!--        android:layout_width="match_parent"-->
-    <!--        android:layout_height="0dp"-->
-    <!--        custom:scv_crop_mode="fit_image"-->
-    <!--        custom:cropFlipHorizontally="false"-->
-    <!--        custom:cropFlipVertically="false"-->
-    <!--        custom:scv_background_color="@color/cardview_light_background"-->
-    <!--        custom:scv_handle_color="@color/cardview_shadow_end_color"-->
-    <!--        custom:scv_guide_color="@color/design_default_color_error"-->
-    <!--        custom:scv_overlay_color="#f6f6f6f6"-->
-    <!--        custom:scv_frame_color="@color/material_on_background_disabled"-->
-    <!--        custom:scv_handle_size="14dp"-->
-    <!--        custom:scv_touch_padding="8dp"-->
-    <!--        custom:scv_handle_show_mode="show_always"-->
-    <!--        custom:scv_guide_show_mode="show_always"-->
-    <!--        custom:scv_min_frame_size="50dp"-->
-    <!--        custom:scv_frame_stroke_weight="1dp"-->
-    <!--        custom:scv_guide_stroke_weight="1dp"/>-->
-
-    <LinearLayout
-        android:layout_width="match_parent"
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnUndo"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:layout_marginStart="@dimen/spacing_8dp"
+        android:text="@string/undo"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/btnUndo"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:text="@string/undo"
-            android:layout_weight="1"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnRotate"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/spacing_8dp"
+        android:layout_marginTop="@dimen/spacing_16dp"
+        android:text="@string/rotate"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/btnCrop"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@id/btnUndo" />
 
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/btnRotate"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/rotate"
-            android:textSize="12sp"
-            android:layout_weight="1"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintEnd_toStartOf="@id/btnCrop"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toEndOf="@id/btnUndo" />
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnCrop"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/spacing_8dp"
+        android:layout_marginTop="@dimen/spacing_16dp"
+        android:text="@string/crop"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/btnSave"
+        app:layout_constraintStart_toEndOf="@id/btnRotate" />
 
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/btnCrop"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/crop"
-            android:layout_weight="1"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@id/btnSave"
-            app:layout_constraintStart_toEndOf="@id/btnRotate" />
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnSave"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/spacing_8dp"
+        android:layout_marginTop="@dimen/spacing_16dp"
+        android:layout_marginEnd="@dimen/spacing_8dp"
+        android:text="@string/save"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/btnCrop" />
 
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/btnSave"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:layout_marginEnd="8dp"
-            android:text="@string/save"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@id/btnCrop" />
-
-    </LinearLayout>
-</LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
